@@ -17,6 +17,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   required = false,
   error,
+  name,
 }) => {
   return (
     <div className="mb-4">
@@ -25,12 +26,11 @@ const Input: React.FC<InputProps> = ({
       </label>
 
       <input
+        name={name}   
         type={type}
         value={value}
         onChange={onChange}
-        className={`w-full p-2 border rounded focus:outline-none ${
-          error ? "border-red-500" : "border-gray-300"
-        }`}
+        className="w-full p-2 border rounded"
       />
 
       {error && (
